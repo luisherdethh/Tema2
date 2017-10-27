@@ -4,33 +4,41 @@ import java.util.Scanner;
 public class Exercici1 {
     public static void main(String[] args) {
         Scanner sn = new Scanner(System.in);
-
-        boolean salir = false;
-        while (!salir) {
-            try {
+//
+//        boolean salir = false;
+//        while (!salir) {
+//            try {
                 System.out.println("Escribe una palabra");
-                String paraula = sn.nextLine();
-
-                System.out.println("La palabra es: " + paraula);
-
+        String palabra = sn.nextLine();
+//
+//                System.out.println("La palabra es: " + paraula);
+//
                 System.out.println("Elige una letra");
                 String letra = sn.nextLine();
-
-                System.out.println("La letra es: " + letra);
-
-                salir = true;
-                int repite = 0;
-                repite = contar(paraula, letra);
-            } catch (InputMismatchException e) {
-                System.out.println("Error, hasta introducido un valor incorrecto");
-            }
-        }
+//
+//                salir = true;
+//
+//                System.out.println("Se repite " + paraula.indexOf(letra)+ " veces");
+//
+//            } catch (InputMismatchException e) {
+//                System.out.println("Error, hasta introducido un valor incorrecto");
+//            }
+//        }
 //        fin del while
 
-    public static int contar(String paraula, caracter) {
+
+        int veces = contarLetras(palabra, letra.charAt(0));
+        System.out.println("La letra se repite: " + veces + " veces");
 
     }
-}
-}
 
-//https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/indexOf
+    static int contarLetras(String palabra, char letra) {
+        int cont = 0;
+        for (int i = 0; i < palabra.length(); i++) {
+            if (palabra.charAt(i) == letra) { //posición charAT(i) = 0
+                cont++;
+            }
+        }
+        return cont;
+    }
+}
